@@ -1,0 +1,1 @@
+go.exe install github.com/aws/aws-lambda-go/cmd/build-lambda-zip@latest
