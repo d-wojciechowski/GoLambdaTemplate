@@ -10,7 +10,8 @@ $env:GOOS="linux"
 Write-Output("Linux x64 build | GOOS $env:GOOS : GOARCH :$env:GOARCH.")
 go get
 go build -ldflags="-w -s" -o distr/$env:PRODUCT_NAME-linux-x64
-Compress-Archive -Update -Path distr/$env:PRODUCT_NAME-linux-x64 -DestinationPath distr/lambda-dist.zip
+#Compress-Archive -Update -Path distr/$env:PRODUCT_NAME-linux-x64 -DestinationPath distr/lambda-dist.zip
+~\Go\Bin\build-lambda-zip.exe -o distr/lambda-dist.zip distr/$env:PRODUCT_NAME-linux-x64
 Write-Output("Linux build done.`n")
 
 #$env:GOARCH="386"
